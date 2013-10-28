@@ -5,10 +5,28 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyC2ck8yFy7yYRff1B0DTQAM9Cpu_ao8lSA&sensor=true" %>
 </head>
+
 <body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+            <a class="navbar-brand" href="#">Tripplanner</a>
+          </div>
+            <div class="collapse navbar-collapse">
+              <li class="active">...</li>
+
+
 
 <%= yield %>
 
 </body>
+
 </html>
