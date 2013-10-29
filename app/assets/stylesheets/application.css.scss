@@ -13,5 +13,20 @@
 // @import 'cssfilename';
 @import "bootstrap";
 
+#map-canvas {
+  height: 300px;
+  width: 600px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 70px;
+}
+
 
 
