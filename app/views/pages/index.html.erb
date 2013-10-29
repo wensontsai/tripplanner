@@ -57,9 +57,9 @@ $(document).ready(function() {
 
 
   $('#things_add').on('click', function() {
-    var selectedThingId = $('#things option:selected').attr('value');
-    var selectedThing = all_things[selectedThingId];
-    $('.day-plan > #things').append('<li>'+selectedThing+'</li>');
+    var selectedThingId = $('#thing_to_dos option:selected').attr('value');
+    var selectedThing = all_thingstodo[selectedThingId];
+    $('.day-plan > #things').append('<li>'+selectedThing["name"]+'</li>');
 
     var myLatLng = new google.maps.LatLng(parseFloat(selectedThing["lat"]), parseFloat(selectedThing["lon"]));
     var marker = new google.maps.Marker({
@@ -70,9 +70,19 @@ $(document).ready(function() {
   });
 
 
+
   $('#rest_add').on('click', function() {
-    var selectedRestaurant = $('#restaurants').val();
-    $('.day-plan > #restaurant').append('<li>'+selectedRestaurant+'</li>')
+    var selectedRestaurantId = $('#restaurants option:selected').attr('value');
+    var selectedRestaurant = all_restaurants[selectedRestaurantId];
+
+    $('.day-plan > #restaurant').append('<li>'+selectedRestaurant["name"]+'</li>');
+
+    var myLatLng = new google.maps.LatLng(parseFloat(selectedRestaurant["lat"]), parseFloat(selectedRestaurant["lon"]));
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      title: selectedRestaurant["name"]
+    });
+  marker.setMap(map);
   });
 
 
