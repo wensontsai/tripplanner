@@ -44,7 +44,7 @@ $(document).ready(function() {
   $('#hotel_add').on('click', function() {
     var selectedHotelId = $('#hotels option:selected').attr('value');
     var selectedHotel = all_hotels[selectedHotelId];
-    $('.day-plan > #hotel').append('<li>'+selectedHotel["name"]+'</li>');
+    $('.day-plan > #hotel').replaceWith('<li>'+selectedHotel["name"]+'</li>');
 
     var myLatLng = new google.maps.LatLng(parseFloat(selectedHotel["lat"]), parseFloat(selectedHotel["lon"]));
     var marker = new google.maps.Marker({
